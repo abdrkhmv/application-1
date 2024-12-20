@@ -14,7 +14,12 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            overflow: hidden; /* Prevent any unintended scrolling */
+        }
+
+        html, body {
+            height: 100%;
+            overflow-y: auto; /* Allow vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
         }
 
         .container {
