@@ -3,64 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Center</title>
+    <title>Modern Skeuomorphism Study Center</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #e0e5ec;
+            background: #f1f2f6;
             color: #333;
-            -webkit-user-select: none; /* Prevent text selection */
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        html, body {
-            height: 100%;
-            overflow-y: auto; /* Allow vertical scrolling */
-            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-        }
-
-        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 20px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
         }
 
         .card {
-            background: #e0e5ec;
-            box-shadow: 7px 7px 15px #b3b6ba, -7px -7px 15px #ffffff;
-            border-radius: 15px;
+            background: #f1f2f6;
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px #d1d2d6, -8px -8px 16px #ffffff;
             padding: 20px;
-            width: 90%;
-            max-width: 400px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
             transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 12px 12px 24px #d1d2d6, -12px -12px 24px #ffffff;
+        }
+
+        .emoji {
+            font-size: 3em;
+            margin-bottom: 10px;
         }
 
         .card h1 {
             font-size: 1.5em;
-            margin: 0;
+            margin: 0 0 10px;
         }
 
         .card p {
-            margin: 0;
+            margin: 0 0 20px;
+            color: #555;
         }
 
         .card button {
             padding: 10px 20px;
-            background: #e0e5ec;
-            box-shadow: 7px 7px 15px #b3b6ba, -7px -7px 15px #ffffff;
+            font-size: 1em;
+            color: #333;
+            background: #f1f2f6;
             border: none;
             border-radius: 50px;
-            font-size: 1em;
+            box-shadow: 4px 4px 8px #d1d2d6, -4px -4px 8px #ffffff;
             cursor: pointer;
             transition: transform 0.2s ease;
         }
@@ -69,20 +76,10 @@
             transform: scale(0.95);
         }
 
-        .emoji {
-            font-size: 2em;
-        }
-
         @media (min-width: 768px) {
             .container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
+                grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        button, .card {
-            -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove tap highlight */
         }
     </style>
 </head>
