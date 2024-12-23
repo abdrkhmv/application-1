@@ -19,6 +19,12 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        button {
+            -webkit-tap-highlight-color: transparent; /* For iOS and Android */
+            -webkit-touch-callout: none; /* Prevent callouts like 'Copy' on long-press */
+            user-select: none; /* Prevent text selection on long-press */
+            outline: none; /* Remove focus outline */}
+        
         .container {
             display: grid;
             grid-template-columns: 1fr;
